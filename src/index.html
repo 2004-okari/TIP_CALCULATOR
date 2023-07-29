@@ -13,19 +13,22 @@
 
       <section class="section-1">
         <div class="cost-1">
-          <p class="text-1">Bill</p>
+          <div class="bill-div">
+            <p class="text-1">Bill</p>
+            <span class="error-1"></span>
+          </div>
           <div class="bill-cost-div">
             <i class="fa-solid fa-dollar-sign icon-1"></i>
             <input type="number" class="bill-cost" placeholder="0">
           </div>
           <p class="text-2">Select Tip %</p>
           <div class="tip-percent">
-            <button class="btn-1">5%</button>
-            <button class="btn-1">10%</button>
-            <button class="btn-1">15%</button>
-            <button class="btn-1">25%</button>
-            <button class="btn-1">50%</button>
-            <input type="number" class="btn-2" placeholder="Custom">
+            <button class="btn-1 btn-tip1">5%</button>
+            <button class="btn-1 btn-tip2">10%</button>
+            <button class="btn-1 btn-tip3">15%</button>
+            <button class="btn-1 btn-tip4">25%</button>
+            <button class="btn-1 btn-tip5">50%</button>
+            <input type="number" class="btn-2 btn-tip6" placeholder="Custom">
           </div>
           <div class="people-title">
             <p class="text-3">Number of people</p>
@@ -42,11 +45,11 @@
         <div class="cover-div">
           <div class="result-1">
             <p class="result-text-1">Tip Amount<br><span class="span-text">/ person</span></p>
-            <p class="result-cost">$0.00</p>
+            <p class="result-cost cost-1">$<span class="tip-value">0.00</span></p>
           </div>
           <div class="result-2">
             <p class="result-text-1">Total<br><span class="span-text">/ person</span></p>
-            <p class="result-cost">$0.00</p>
+            <p class="result-cost cost-2">$<span class="cost-text">0.00</span></p>
           </div>
         </div>
         <button class="reset-btn">reset</button>
