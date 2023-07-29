@@ -8,41 +8,49 @@
 <script defer src="/runtime.bundle.js"></script><script defer src="/main.bundle.js"></script></head>
 <body>
   <h1 class="split-text">SPLI<br>TTER</h1>
-  <main class="main">
-    <section class="section-1">
-      <div class="cost-1">
-        <p class="text-1">Bill</p>
-        <div class="bill-cost-div">
-          <i class="fa-solid fa-dollar-sign icon-1"></i>
-          <input type="number" class="bill-cost" placeholder="0">
+  <main class="main-area">
+    <section class="main">
+
+      <section class="section-1">
+        <div class="cost-1">
+          <p class="text-1">Bill</p>
+          <div class="bill-cost-div">
+            <i class="fa-solid fa-dollar-sign icon-1"></i>
+            <input type="number" class="bill-cost" placeholder="0">
+          </div>
+          <p class="text-2">Select Tip %</p>
+          <div class="tip-percent">
+            <button class="btn-1">5%</button>
+            <button class="btn-1">10%</button>
+            <button class="btn-1">15%</button>
+            <button class="btn-1">25%</button>
+            <button class="btn-1">50%</button>
+            <input type="number" class="btn-2" placeholder="Custom">
+          </div>
+          <div class="people-title">
+            <p class="text-3">Number of people</p>
+            <span class="error-text">dd</span>
+          </div>
+          <div class="total-peeps-div">
+            <i class="fa-solid fa-user icon-2"></i>          
+            <input type="number" class="total-peeps" placeholder="0">
+          </div>
         </div>
-        <p class="text-2">Select Tip %</p>
-        <div class="tip-percent">
-          <button class="btn-1">5%</button>
-          <button class="btn-1">10%</button>
-          <button class="btn-1">15%</button>
-          <button class="btn-1">25%</button>
-          <button class="btn-1">50%</button>
-          <button class="btn-1">Custom</button>
+        <div class="cost-2"></div>
+      </section>
+      <section class="section-2">
+        <div class="cover-div">
+          <div class="result-1">
+            <p class="result-text-1">Tip Amount<br><span class="span-text">/ person</span></p>
+            <p class="result-cost">$0.00</p>
+          </div>
+          <div class="result-2">
+            <p class="result-text-1">Total<br><span class="span-text">/ person</span></p>
+            <p class="result-cost">$0.00</p>
+          </div>
         </div>
-        <p class="text-3">Number of people</p>
-        <div class="total-peeps-div">
-          <i class="fa-solid fa-user icon-2"></i>          
-          <input type="number" class="total-peeps" placeholder="0">
-        </div>
-      </div>
-      <div class="cost-2"></div>
-    </section>
-    <section class="section-2">
-      <div class="result-1">
-        <p class="result-text-1">Tip Amount<span>/ person</span></p>
-        <p class="result-cost">$0.00</p>
-      </div>
-      <div class="result-2">
-        <p class="result-text-1">Total<span>/ person</span></p>
-        <p class="result-cost">$0.00</p>
-      </div>
-      <button class="reset-btn">reset</button>
+        <button class="reset-btn">reset</button>
+      </section>
     </section>
   </main>
 </body>
