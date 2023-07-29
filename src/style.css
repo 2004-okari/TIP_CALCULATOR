@@ -88,7 +88,6 @@ body {
           color: #9BA4B5;
         }
         .tip-percent {
-          margin-bottom: 40px;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(101px, 1fr));
           gap: 12px 10px;
@@ -144,6 +143,7 @@ body {
           }
         }
         .total-peeps-div {
+          margin-bottom: 40px;
           position: relative;
           .icon-2 {
             position: absolute;
