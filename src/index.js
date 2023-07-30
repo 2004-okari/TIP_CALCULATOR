@@ -15,33 +15,41 @@ const tipBtn6 = document.querySelector('.btn-tip6');
 //Error DOM elements
 const error1 = document.querySelector('.error-1');
 const error2 = document.querySelector('.error-text');
+const error3 = document.querySelector('.error-3');
 
 //Display bill costs
 const cost1 = document.querySelector('.tip-value');
 const cost2 = document.querySelector('.cost-text');
 
 const calculateTip = (num, val) => {
-  if (!billCost.value) {
+  if (!billCost.value || billCost.value <= 0) {
     error1.innerHTML = 'Please enter a valid bill cost';
     billCost.style.outline = '1px solid red'
     return;
-  } 
-  const numberOfPeople = val;
-  if (numberOfPeople <= 0) {
-    error2.innerHTML = 'Valid number of people';
-    return;
   } else {
+    // error1.innerHTML = '';
+    // billCost.style.outline = ''
 
-    let result = (num / 100) * billCost.value;
-    result = result / numberOfPeople;
-    result = result.toFixed(2);
-    
-    cost1.innerHTML = result;
+    const numberOfPeople = val;
+    if (numberOfPeople <= 0) {
+      people.style.outline = '1px solid red';
+      error2.innerHTML = 'Valid number required';
+      return;
+    } else {
+      
+      let result = (num / 100) * billCost.value;
+      result = result / numberOfPeople;
+      result = result.toFixed(2);
+      
+      cost1.innerHTML = result;
+      error3.innerHTML = `You chose ${num}%`
+      error3.style.color = 'green'
+    }
   }
 }
 
 const calcutaleTotalCost = (num) => {
-  if (!billCost.value || people.value <= 0) {
+  if (billCost.value  <= 0 || people.value <= 0 ) {
     return;
   } else {
 
@@ -79,7 +87,14 @@ tipBtn5.addEventListener('click', () => {
   calcutaleTotalCost(50);
 });
 tipBtn6.addEventListener('change', () => {
-  calculateTip(tipBtn6.value, people.value);
-  calcutaleTotalCost(tipBtn6.value);
+  if (tipBtn6.value <= 0) {
+    tipBtn6.style.backgroundColor = 'red';
+    error3.innerHTML = 'Valid no required'
+    error3.style.color = 'red';
+  } else {
+    tipBtn6.style.backgroundColor = '';
+    calculateTip(tipBtn6.value, people.value);
+    calcutaleTotalCost(tipBtn6.value);
+  }
 });
 

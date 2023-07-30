@@ -83,9 +83,19 @@ body {
             }
           }
         }
-        .text-2 {
-          margin-bottom: 16px;
-          color: #9BA4B5;
+        .select-div {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          .text-2 {
+            margin-bottom: 16px;
+            color: #9BA4B5;
+          }
+          .error-3 {
+            color: red;
+          }
+
         }
         .tip-percent {
           display: grid;
