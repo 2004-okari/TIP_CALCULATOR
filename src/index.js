@@ -20,29 +20,66 @@ const error2 = document.querySelector('.error-text');
 const cost1 = document.querySelector('.tip-value');
 const cost2 = document.querySelector('.cost-text');
 
-const calculateTip = (num, val = 1) => {
+const calculateTip = (num, val) => {
   if (!billCost.value) {
     error1.innerHTML = 'Please enter a valid bill cost';
     billCost.style.outline = '1px solid red'
     return;
-  }
+  } 
   const numberOfPeople = val;
   if (numberOfPeople <= 0) {
-    error2.innerHTML = 'Please enter a valid number of people';
+    error2.innerHTML = 'Valid number of people';
     return;
-  }
-  let result = ((num / 100) * billCost.value);
-  result = result / numberOfPeople;
-  result = result.toFixed(2);
+  } else {
 
-  cost1.innerHTML = result;
+    let result = (num / 100) * billCost.value;
+    result = result / numberOfPeople;
+    result = result.toFixed(2);
+    
+    cost1.innerHTML = result;
+  }
 }
+
+const calcutaleTotalCost = (num) => {
+  if (!billCost.value || people.value <= 0) {
+    return;
+  } else {
+
+    let result1 = billCost.value / people.value;
+    let result2 = (result1 * (num / 100)) + result1;
+    result2 = result2.toFixed(2);
+    
+    cost2.innerHTML = result2;
+  }
+};
 
 //Display tip amount
 tipBtn1.addEventListener('click', () => {
   calculateTip(5, people.value);
-})
-tipBtn2
-tipBtn3
-tipBtn4
-tipBtn5
+  calcutaleTotalCost(5);
+});
+
+tipBtn2.addEventListener('click', () => {
+  calculateTip(10, people.value);
+  calcutaleTotalCost(10);
+});
+
+tipBtn3.addEventListener('click', () => {
+  calculateTip(15, people.value);
+  calcutaleTotalCost(15);
+});
+
+tipBtn4.addEventListener('click', () => {
+  calculateTip(25, people.value);
+  calcutaleTotalCost(25);
+});
+
+tipBtn5.addEventListener('click', () => {
+  calculateTip(50, people.value);
+  calcutaleTotalCost(50);
+});
+tipBtn6.addEventListener('change', () => {
+  calculateTip(tipBtn6.value, people.value);
+  calcutaleTotalCost(tipBtn6.value);
+});
+
