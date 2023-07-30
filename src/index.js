@@ -86,7 +86,7 @@ tipBtn5.addEventListener('click', () => {
   calculateTip(50, people.value);
   calcutaleTotalCost(50);
 });
-tipBtn6.addEventListener('change', () => {
+tipBtn6.addEventListener('input', () => {
   if (tipBtn6.value <= 0) {
     tipBtn6.style.backgroundColor = 'red';
     error3.innerHTML = 'Valid no required'
