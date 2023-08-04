@@ -22,13 +22,20 @@ const cost1 = document.querySelector('.tip-value');
 const cost2 = document.querySelector('.cost-text');
 
 const calculateTip = (num, val) => {
+  error1.innerHTML = '';
+  error2.innerHTML = '';
+  error3.innerHTML = '';
+  error1.innerHTML = '';
+  billCost.style.outline = ''
+
   if (!billCost.value || billCost.value <= 0) {
     error1.innerHTML = 'Please enter a valid bill cost';
     billCost.style.outline = '1px solid red'
     return;
   } else {
-    // error1.innerHTML = '';
-    // billCost.style.outline = ''
+
+    people.style.outline = '';
+    error2.innerHTML = '';
 
     const numberOfPeople = val;
     if (numberOfPeople <= 0) {
@@ -86,15 +93,19 @@ tipBtn5.addEventListener('click', () => {
   calculateTip(50, people.value);
   calcutaleTotalCost(50);
 });
+
 tipBtn6.addEventListener('input', () => {
   if (tipBtn6.value <= 0) {
     tipBtn6.style.backgroundColor = 'red';
     error3.innerHTML = 'Valid no required'
     error3.style.color = 'red';
+    if (tipBtn6.value === '') {
+  
+      tipBtn6.style.backgroundColor = '';
+    }
   } else {
     tipBtn6.style.backgroundColor = '';
     calculateTip(tipBtn6.value, people.value);
     calcutaleTotalCost(tipBtn6.value);
   }
 });
-
